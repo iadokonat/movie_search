@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>映画検索サイト</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <!-- Vueの開発バージョン、便利なコンソールの警告が含まれています -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- タイトル -->
+      <h1 class="title" @click="toHome">映画検索サイト</h1>
+
+      <main>
+        <!-- 検索する画面 -->
+        <form
+          v-show="showPage === 'searchPage' || showPage === 'searchResult'"
+          @submit.prevent="isSearch"
+          id="form"
+        >
+          <input
+            v-model="searchWord"
+            type="text"
+            id="search"
+            placeholder="検索"
+          />
+          <button><i class="fas fa-search"></i></button>
+        </form>
+        <p v-show="showPage === 'searchPage'" id="para" class="hidden">
+          検索結果は0件でした
+        </p>
+
+        <!-- 検索結果を表示する画面 -->
+        <div
+          v-show="showPage === 'searchResult'"
+          @click="isDetail"
+          id="movie-img"
+        ></div>
+
+        <button
+          v-show="showPage === 'searchResult'"
+          @click="isAdd"
+          id="add-btn"
+        >
+          さらに取得
+        </button>
+
+        <!-- 映画の詳細ページを表示する画面 -->
+        <div id="detail" v-show="showPage === 'detailPage'"></div>
+        <button
+          v-show="showPage === 'detailPage'"
+          @click="showPage = 'searchResult'"
+          id="return-btn"
+        >
+          戻る
+        </button>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

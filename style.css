@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1.title {
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+  background: #666;
+  color: #fff;
+  cursor: pointer;
+}
+
+main {
+  margin: 0 10px;
+}
+
+#form {
+  width: min(600px, 80vw);
+  text-align: center;
+  margin: 20px auto;
+}
+
+#search,
+button {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #888;
+  margin: 0 2px;
+}
+
+#search {
+  width: 70%;
+}
+
+#search:focus {
+  box-shadow: inset 0 0 5px 2px rgb(140, 193, 236);
+  border: 0px solid transparent;
+}
+
+#para {
+  text-align: center;
+  font-size: min(50px, 6vw);
+}
+
+#movie-img {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* height: auto; */
+  align-items: flex-start;
+}
+
+img, .noImg {
+  width: 20vw;
+  height: 30vw;
+  object-fit: cover;
+  margin-top: 20px;
+  display: block;
+}
+
+.noImg {
+  background: #555;  
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+img:hover,
+.noImg:hover {
+  transform: scale(1.2);
+}
+
+#detail img {
+  width: min(80vw, 600px);
+  height: auto;
+  margin: 40px auto 10px;
+}
+
+#detail .noImg {
+  width: min(80vw, 600px);
+  height: min(120vw, 900px);
+  margin: 40px auto 10px;
+  font-size: min(50px, 5vw);
+  line-height: min(120vw, 900px);
+}
+
+#detail img:hover,
+#detail .noImg:hover {
+  transform: scale(1);
+}
+
+#detail h1 {
+  border-bottom: 1px solid #555;
+  margin: 10px 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#detail h2 {
+  margin: 15px;
+}
+
+#detail p {
+  margin: 10px 10px 30px;
+}
+
+#add-btn,
+#return-btn {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  display: block;
+  background: #464646fa;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+}
+
+#add-btn:hover,
+#return-btn:hover {
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  img, .noImg {
+    width: 18vw;
+    height: 27vw;
+  }
+}
+@media (min-width: 850px) {
+  img, .noImg {
+    width: 16vw;
+    height: 24vw;
+  }
+}
+@media (min-width: 1000px) {
+  img, .noImg {
+    width: 14vw;
+    height: 21vw;
+  }
+}
